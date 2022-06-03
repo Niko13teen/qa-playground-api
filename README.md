@@ -1,3 +1,2 @@
-# qa-playground-api
-PlayGround REST API
-Run: flask run
+# QA-PlayGround REST API
+Run: $flask run
