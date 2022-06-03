@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> QA-PlayGround REST API </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    </head>
+    <body>
+        <div class="flex-container">
+            <div class="flex-item item-1">
+                <h1> QA-PlayGround REST API </h1>
+                <p> [ base path: / ]</p>
+                <br>
+                <p> A simple HTTP Request & Response Service.</p>
+                <a href="mailto:sergeyrus977@gmail.com"> Send email to the developer </a></p>
+            </div>
+            <div class="flex-item item-2">
+                <h2> HTTP Methods</h2>
+
+                <div class="accordion get_users">
+                    <span id="get"><b>GET</b></span> <span id="path"><b>/api/users/0</b></span><span id="description"> Get a list of all users </span>
+                </div>
+                <div class="content content_get_users">
+                    <p><b>Description:</b> GET requests access to resources </p><br>
+                    <p><b>Content-Type:</b> application/json</p>
+                    <p><b>Response:</b> 200 </p>
+                </div>
+
+                <div class="accordion get_users">
+                    <span id="get"><b>GET</b></span> <span id="path"><b>/api/users/7</b></span><span id="description"> Get a specific user </span>
+                </div>
+                <div class="content content_get_users">
+                    <p><b>Description:</b> GET requests access to resources </p><br>
+                    <p><b>Content-Type:</b> application/json</p>
+                    <p><b>Response:</b> 200 </p>
+                </div>
+
+                <div class="accordion post_users">
+                    <span id="post"><b>POST</b></span> <span id="path"><b>/api/users/1</b></span><span id="description"> Create new user </span>
+                </div>
+                <div class="content content_post_users">
+                    <p><b>Description:</b> POST: Sends data to the server to create a new object. Often used when uploading a file or submitting a web form. </p><br>
+                    <p><b>Params:</b></p>
+                    <p><b>"email":</b>"test@gmail.com"</p>
+                    <p><b>"first_name":</b>"test"</p>
+                    <p><b>"last_name":</b>"test"</p><br>
+                    <p><b>Content-Type:</b> application/json</p>
+                    <p><b>Response:</b> 201 </p>
+                </div>
+
+                <div class="accordion put_users">
+                    <span id="put"><b>PUT</b></span> <span id="path"><b>/api/users/9</b></span><span id="description"> Update user data </span>
+                </div>
+                <div class="content content_put_users">
+                    <p><b>Description:</b> PUT: Similar to POST, but used to replace an existing object.
+                    </p><br>
+                    <p><b>Params:</b></p>
+                    <p><b>"email":</b>"test@gmail.com"</p>
+                    <p><b>"first_name":</b>"test"</p>
+                    <p><b>"last_name":</b>"test"</p><br>
+                    <p><b>Content-Type:</b> application/json</p>
+                    <p><b>Response:</b> 201 </p>
+                </div>
+
+                <div class="accordion del_users">
+                    <span id="del"><b>DELETE</b></span> <span id="path"><b>/api/users/7</b></span><span id="description"> Delete user </span>
+                </div>
+                <div class="content content_del_users">
+                    <p><b>Description:</b> DELETE request deletes the specified resource </p>
+                    </p><br>
+                    <p><b>Content-Type:</b> application/json</p>
+                    <p><b>Response:</b> 204 </p>
+                </div>
+                <br>
+
+            </div>
+            <div class="flex-item item-3">
+                <h2> About the project </h2>
+                <div class="about">
+                    <div class="box">
+                        <h3>Fake data</h3>
+                        <p> No more tedious sample data creation, we've got it covered </p>
+                    </div><hr>
+                    <div class="box">
+                        <h3>Finding bugs</h3>
+                        <p> The application contains bugs on the API side, can you find everything? </p>
+                    </div><hr>
+                    <div class="box">
+                        <h3>Testing tools</h3>
+                        <p> You can use any API testing tool: Postman, curl, python & etc. </p>
+                    </div><br>
+                </div><br>
+                <h2> Getting Started </h2>
+                <div class="codestyle">
+                    <p><b style="color:blue">curl</b> https://qaplaygroundapi.pythonanywhere.com/api/users/0 </p>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.querySelectorAll('.accordion').forEach((el) => {
+                el.addEventListener('click', () => {
+                    let content = el.nextElementSibling
+                    if(content.style.maxHeight) {
+                        document.querySelectorAll('.content').forEach((el) => el.style.maxHeight = null)
+                    } else {
+                        document.querySelectorAll('.content').forEach((el) => el.style.maxHeight = null)
+                        content.style.maxHeight = content.scrollHeight + 'px'
+                    }
+                })
+            })
+        </script>
+        {% block home %}
+        {% endblock %}
+    </body>
+</html>
