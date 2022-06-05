@@ -1,7 +1,7 @@
 import flask.scaffold
 flask.helpers._endpoint_from_view_func = flask.scaffold._endpoint_from_view_func
-from flask import Flask, render_template, request
-from flask_restful import Api, Resource, reqparse
+from flask import Flask, render_template
+from flask_restful import Api
 from models import Users
 
 
